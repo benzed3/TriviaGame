@@ -67,6 +67,9 @@ $(document).ready(function () {
 
         console.log(choice);
 
+        if (choice === True) {
+            correct++;
+        }
 
 
 
