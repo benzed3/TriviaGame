@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     $("#button").on("click", function () {
         setTimeout(function () {
-            alert("timeout");
+            alert("TIME'S UP!!!");
         }, 60000);
 
         setInterval(decrement, 1000);
@@ -24,51 +24,54 @@ $(document).ready(function () {
         //question 1
 
         $("#quiz").html("<h4>1. In what city is the Eiffel Tower located?</h4>");
-        $("#quiz").append("<input type='radio' name='one' data-correct='Lyons'> Lyons");
-        $("#quiz").append("<input type='radio' name='one' data-correct='Niece'> Niece");
-        $("#quiz").append("<input type='radio' name='one' data-correct='True'> Paris");
-        $("#quiz").append("<input type='radio' name='one' data-correct='Versailles'> Versailles");
+        $("#quiz").append("<input type='radio' name='one' class='pick' value='0'> Lyons");
+        $("#quiz").append("<input type='radio' name='one' class='pick' value='0'> Niece");
+        $("#quiz").append("<input type='radio' name='one' class='pick' value='1'> Paris");
+        $("#quiz").append("<input type='radio' name='one' class='pick' value='0'> Versailles");
 
         //question 2
 
         $("#quiz").append("<br><br><h4>2. Where in India is the Taj Mahal?</h4>");
-        $("#quiz").append("<input type='radio' name='two' data-correct='True'> Agra");
-        $("#quiz").append("<input type='radio' name='two' data-correct='Mumbai'> Mumbai");
-        $("#quiz").append("<input type='radio' name='two' data-correct='New Delhi'> New Delhi");
-        $("#quiz").append("<input type='radio' name='two' data-correct='Patna'> Patna");
+        $("#quiz").append("<input type='radio' name='two' class='pick' value='1'> Agra");
+        $("#quiz").append("<input type='radio' name='two' class='pick' value='0'> Mumbai");
+        $("#quiz").append("<input type='radio' name='two' class='pick' value='0'> New Delhi");
+        $("#quiz").append("<input type='radio' name='two' class='pick' value='0'> Patna");
 
         //question 3
 
         $("#quiz").append("<br><br><h4>3. The Hagia ___ can be seen in Istanbul, Turkey.</h4>");
-        $("#quiz").append("<input type='radio' name='three' data-correct='Sophie'> Sophie");
-        $("#quiz").append("<input type='radio' name='three' data-correct='Scolia'> Scolia");
-        $("#quiz").append("<input type='radio' name='three' data-correct='True'> Sophia");
-        $("#quiz").append("<input type='radio' name='three' data-correct='Sorpia'> Sorpia");
+        $("#quiz").append("<input type='radio' name='three' class='pick' value='0'> Sophie");
+        $("#quiz").append("<input type='radio' name='three' class='pick' value='0'> Scolia");
+        $("#quiz").append("<input type='radio' name='three' class='pick value='1'> Sophia");
+        $("#quiz").append("<input type='radio' name='three' class='pick' value='0'> Sorpia");
 
         //question 4
 
         $("#quiz").append("<br><br><h4>4. Approximately how many years old is the Great Pyramid of Egypt?</h4>");
-        $("#quiz").append("<input type='radio' name='four' data-correct='1500'> 1500");
-        $("#quiz").append("<input type='radio' name='four' data-correct='2500'> 2500");
-        $("#quiz").append("<input type='radio' name='four' data-correct='3500'> 3500");
-        $("#quiz").append("<input type='radio' name='four' data-correct='True'> 4500");
+        $("#quiz").append("<input type='radio' name='four' class='pick' value='0'> 1500");
+        $("#quiz").append("<input type='radio' name='four' class='pick' value='0'> 2500");
+        $("#quiz").append("<input type='radio' name='four' class='pick' value='0'> 3500");
+        $("#quiz").append("<input type='radio' name='four' class='pick' value='1'> 4500");
 
         //question 5
 
         $("#quiz").append("<br><br><h4>5. The ruins of Machu Picchu are in this South American country.</h4>");
-        $("#quiz").append("<input type='radio' name='five' data-correct='Argentina'> Argentina");
-        $("#quiz").append("<input type='radio' name='five' data-correct='Lima'> Lima");
-        $("#quiz").append("<input type='radio' name='five' data-correct='True'> Peru");
-        $("#quiz").append("<input type='radio' name='five' data-correct='Brazil'> Brazil");
+        $("#quiz").append("<input type='radio' name='five' class='pick' value='0'> Argentina");
+        $("#quiz").append("<input type='radio' name='five' class='pick' value='0'> Lima");
+        $("#quiz").append("<input type='radio' name='five' class='pick' value='1'> Peru");
+        $("#quiz").append("<input type='radio' name='five' class='pick' value='0'> Brazil");
 
-        var correct;
-        var wrong;
-        var choice = $("#quiz").attr("data-correct");
+        var correct = 0;
+        var wrong = 0;
+        var choice = $(".pick").val();
 
         console.log(choice);
 
-        if (choice === True) {
+        if (parseInt(choice) === 1) {
             correct++;
+        }
+        else if (parseInt(choice) === 0) {
+            wrong++;
         }
 
 
