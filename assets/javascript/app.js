@@ -42,7 +42,7 @@ $(document).ready(function () {
         $("#quiz").append("<br><br><h4>3. The Hagia ___ can be seen in Istanbul, Turkey.</h4>");
         $("#quiz").append("<input type='radio' name='three' class='pick' value='0'> Sophie");
         $("#quiz").append("<input type='radio' name='three' class='pick' value='0'> Scolia");
-        $("#quiz").append("<input type='radio' name='three' class='pick value='1'> Sophia");
+        $("#quiz").append("<input type='radio' name='three' class='pick' value='1'> Sophia");
         $("#quiz").append("<input type='radio' name='three' class='pick' value='0'> Sorpia");
 
         //question 4
@@ -61,18 +61,22 @@ $(document).ready(function () {
         $("#quiz").append("<input type='radio' name='five' class='pick' value='1'> Peru");
         $("#quiz").append("<input type='radio' name='five' class='pick' value='0'> Brazil");
 
+
+
         var correct = 0;
         var wrong = 0;
-        var choice = $(".pick").val();
 
-        console.log(choice);
+        $(".pick").on("click", function () {
+            var choice = $(this).val();
 
-        if (parseInt(choice) === 1) {
-            correct++;
-        }
-        else if (parseInt(choice) === 0) {
-            wrong++;
-        }
+            if (parseInt(choice) === 0) {
+                wrong++;
+            }
+            else if (parseInt(choice) === 1) {
+                correct++;
+            }
+
+        });
 
 
 
