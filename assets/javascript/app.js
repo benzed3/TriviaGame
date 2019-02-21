@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-    var start = 60;
+    var start = 120;
     var stop = 0;
     var intervalId
 
     $("#button").on("click", function () {
         setTimeout(function () {
-        }, 60000);
+        }, 120000);
 
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
