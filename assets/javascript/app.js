@@ -20,6 +20,7 @@ $(document).ready(function () {
                 $("#quiz").html("<h2>correct: " + correct + "</h2>");
                 $("#quiz").append("<h2>wrong: " + wrong + "</h2>");
                 $("#quiz").append("<h2>unanswered: " + unanswered + "</h2>");
+                clearInterval(intervalId);
             }
         }
 
